@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - fastapiPrediction
+name: Build and deploy Python app to Azure Web App - FastApiPrediction
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       - name: Create and start virtual environment
         run: |
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_35C468C797E345168FAEB969786A0CE0 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E4D1323B8BBC441EA6CAFC7DBB1C375E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EFB82757C98348E599A93934B91749CF }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8BEA1732A7034F56A35375ED059C9DC6 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2982B49904F24EE880298CA423CB52FB }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_01ECCD2C845B42B9B67FC57E9C440A76 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'fastapiPrediction'
+          app-name: 'FastApiPrediction'
           slot-name: 'Production'
           
