@@ -41,9 +41,7 @@ class MatchData(BaseModel):
     match_type: str
     team_batting: str
     team_bowling: str
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+
 # Prediction endpoint
 @app.post("/predict")
 def predict_score(data: MatchData):
